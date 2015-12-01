@@ -9,7 +9,7 @@
 
 " Force filetype
 
-autocmd BufRead,BufNewFile .eslintrc setfiletype json
+"autocmd BufRead,BufNewFile .eslintrc setfiletype json
 autocmd BufRead,BufNewFile .jshintrc setfiletype json
 
 

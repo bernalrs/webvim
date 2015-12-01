@@ -16,7 +16,6 @@ set number
 syntax on
 set background=dark
 set t_Co=256
-color mango
 
 "indent
 set smartindent
@@ -49,3 +48,4 @@ set mouse=a
 " spell check, to be activated manually
 set spelllang=en_us
 set nospell
+

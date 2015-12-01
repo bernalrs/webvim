@@ -5,18 +5,21 @@
 "
 
 " leader
-let g:mapleader = ","
-let g:localmapleader = "\\"
+"let g:mapleader = ","
+"let g:localmapleader = "\\"
 
-" move the current line below
-nnoremap <leader>- ddp
+"" move the current line below
+"nnoremap <leader>- ddp
 
-" move the current line above
-nnoremap <leader>_ ddkP
+"" move the current line above
+"nnoremap <leader>_ ddkP
 
 " switch tab
 nnoremap <S-right> :tabn<CR>
 nnoremap <S-left> :tabp<CR>
+
+nnoremap <s-right> :bn<CR>
+nnoremap <s-left> :bp<CR>
 
 " insert mode uppercase the current word
 "  <esc> : go to normal mode
@@ -55,20 +58,20 @@ if g:hardcoreMode == 1
 
     " Leave insert mode (like <esc>) and disable <esc>
     inoremap jk <esc>
-    inoremap <special> <esc> <nop>
-    inoremap <esc>^[ <esc>^[
+    "inoremap <special> <esc> <nop>
+    "inoremap <esc>^[ <esc>^[
 
     " Disable arrow keys
 
-    nnoremap <up> <nop>
-    nnoremap <down> <nop>
-    nnoremap <left> <nop>
-    nnoremap <right> <nop>
+    "nnoremap <up> <nop>
+    "nnoremap <down> <nop>
+    "nnoremap <left> <nop>
+    "nnoremap <right> <nop>
 
-    inoremap <up> <nop>
-    inoremap <down> <nop>
-    inoremap <left> <nop>
-    inoremap <right> <nop>
+    "inoremap <up> <nop>
+    "inoremap <down> <nop>
+    "inoremap <left> <nop>
+    "inoremap <right> <nop>
 endif
 
 

@@ -19,7 +19,7 @@ function! OpenNerdTree()
         exec "normal! \<c-w>\<c-w>"
     endif
 endfunction
-autocmd VimEnter * call OpenNerdTree()
+"autocmd VimEnter * call OpenNerdTree()
 
 " nerdtree autoclose if it is the last opened buffer
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -51,7 +51,10 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
 "  powerline font
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
+
+" show the buffer numbers
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
 " [> EditorConfig <]
@@ -139,8 +142,8 @@ let g:easy_align_ignore_groups = ['Comment']
 " [> multiple cursor <]
 
 let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-m>'
-let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-S-d>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<esc>'
 
@@ -169,4 +172,5 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 
+color Tomorrow-Night-Bright
 

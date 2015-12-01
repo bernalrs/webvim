@@ -21,10 +21,17 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
+Plug 'wesQ3/vim-windowswap'
+Plug 'davidhalter/jedi-vim'
+Plug 'klen/python-mode'
+Plug 'Townk/vim-autoclose'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
