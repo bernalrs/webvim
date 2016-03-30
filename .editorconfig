@@ -16,3 +16,6 @@ indent_size = 2
 
 [**.html]
 brace_style = expand
+
+[**.js]
+max_char = 80

@@ -43,5 +43,5 @@ function! CheckLeftBuffers()
     unlet i
   endif
 endfunction
-autocmd BufEnter * call CheckLeftBuffers()
+"autocmd BufEnter * call CheckLeftBuffers()
 

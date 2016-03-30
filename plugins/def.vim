@@ -21,17 +21,27 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim', { 'do' : 'npm install' }
 Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
 Plug 'wesQ3/vim-windowswap'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 Plug 'klen/python-mode'
 Plug 'Townk/vim-autoclose'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'SirVer/ultisnips'         " The ultisnips engine
+Plug 'honza/vim-snippets'       " And the snippets
+Plug 'exu/pgsql.vim'
+Plug 'vim-scripts/dbext.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'altercation/vim-colors-solarized'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
+

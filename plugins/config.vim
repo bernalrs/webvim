@@ -34,7 +34,7 @@ let g:NERDTreeShowHidden=1
 " let g:NERDTreeMouseMode=3
 
 " ignored files
-let g:NERDTreeIgnore=['\.swp$', '\~$']
+let g:NERDTreeIgnore=['\.swp$', '\~$', '\.pyc$']
 nnoremap <c-n> :NERDTreeToggle<cr>
 
 
@@ -71,6 +71,9 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_html_checkers=['tidy']
+let g:syntastic_html_args = "--show-body-only yes"
+"let g:syntastic_html_checkers=['w3']
+"let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_vim_checkers=['vimlint']
 let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_yaml_checkers=['js-yaml']
@@ -151,16 +154,16 @@ let g:multi_cursor_quit_key='<esc>'
 " [> JsBeautify <]
 
 " format selection
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer>  <c-f> :call RangeJsonBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <C-S-F> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer>  <C-S-F> :call RangeJsonBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <C-S-F> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <C-S-F> :call RangeCSSBeautify()<cr>
 
 " format the whole file
-autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType json nnoremap <buffer>  <c-f> :call JsonBeautify()<cr>
-autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType javascript nnoremap <buffer>  <C-S-F> :call JsBeautify()<cr>
+autocmd FileType json nnoremap <buffer>  <C-S-F> :call JsonBeautify()<cr>
+autocmd FileType html nnoremap <buffer> <C-S-F> :call HtmlBeautify()<cr>
+autocmd FileType css nnoremap <buffer> <C-S-F> :call CSSBeautify()<cr>
 
 " [> YankStack <]
 
@@ -172,5 +175,43 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 
-color Tomorrow-Night-Bright
+
+" [> CtrlP <]
+
+" Ignore files and folders
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc     " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll|pdf|toc|log|out|aux)$',
+  \ }
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v  "flash\|3rd_party\|flex\|objectivec\|java\|system_tests\|csharp\|cpp"']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v  "flash\|3rd_party\|flex\|objectivec\|java\|system_tests\|csharp"']
+
+
+" Theme
+set background=dark
+"colorscheme hybrid
+colorscheme jellybeans
+highlight ColorColumn ctermbg=8
+set colorcolumn=100
+
+
+" [> Ultisnips <]
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
+
+" [> YouCompleteMe <]
+"let g:ycm_key_list_select_completion = ['<TAB>', '<c-j>']
+"let g:ycm_key_list_previous_completion = ['<S-TAB>', '<c-k>']
+let g:ycm_key_list_select_completion = ['<TAB>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
+
+
+" [> DBEXT <]
+let g:dbext_default_profile_rbertrand_beta = 'type=PGSQL:user=beta_usr:passwd=beta:dbname=beta_db'
+
+" [> image.vim <]
+au BufRead *.png,*.jpg,*.jpeg,*.PNG :call DisplayImage()
 
