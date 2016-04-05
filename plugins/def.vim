@@ -43,6 +43,10 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 Plug 'skammer/vim-css-color'
 Plug 'moll/vim-bbye'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 

@@ -180,14 +180,17 @@ let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
 " [> CtrlP <]
 
 " Ignore files and folders
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc     " MacOSX/Linux
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll|pdf|toc|log|out|aux)$',
-  \ }
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v  "flash\|3rd_party\|flex\|objectivec\|java\|system_tests\|csharp\|cpp"']
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v  "flash\|3rd_party\|flex\|objectivec\|java\|system_tests\|csharp"']
-
+if executable('ag')
+    " Use ag over anything else
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc     " MacOSX/Linux
+    let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
+    \ 'file': '\v\.(exe|so|dll|pdf|toc|log|out|aux)$',
+    \ }
+    let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v  "flash\|3rd_party\|flex\|objectivec\|java\|system_tests\|csharp"']
+endif
 
 " Theme
 set background=dark
