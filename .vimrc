@@ -28,6 +28,8 @@ let s:configMapping = s:vimDir.'/config/mapping.vim'
 let s:configAbbrev  = s:vimDir.'/config/abbrev.vim'
 let s:configAutocmd  = s:vimDir.'/config/autocmd.vim'
 
+let s:scriptsDef = s:vimDir.'/scripts/def.vim'
+
 let s:userConfig  = s:vimDir.'/local.vim'
 
 if !isdirectory(s:pluginDir)
@@ -76,6 +78,9 @@ else
     " Loads plugins def and config
     exec ":source ".s:pluginDef
     exec ":source ".s:pluginConf
+
+    " Loads script definitions
+    exec ":source ".s:scriptsDef
 
 
     " user configuration

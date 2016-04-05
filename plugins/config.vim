@@ -70,8 +70,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-let g:syntastic_html_checkers=['tidy']
-let g:syntastic_html_args = "--show-body-only yes"
+"let g:syntastic_html_checkers=['tidy']
+"let g:syntastic_html_args = "--show-body-only yes"
 "let g:syntastic_html_checkers=['w3']
 "let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_vim_checkers=['vimlint']
@@ -81,10 +81,11 @@ let g:syntastic_scss_checkers=['scss-lint']
 let g:syntastic_css_checkers=['csslint']
 let g:syntastic_handlebars_checkers=['handlebars']
 let g:syntastic_tpl_checkers=['handlebars']
+let g:syntastic_python_checkers = ['pyflake']
 
 " get available js linters
 function! GetJslinters()
-    let l:linters = [ ['eslint', '.eslintrc'], ['jshint', '.jshintrc'] ]
+    let l:linters = [ ['eslint', '.eslintrc'], ['jshint', '.jshintrc'], ['jscs', '.jscsrc'] ]
     let l:available = []
     for l:linter in l:linters
        if executable(l:linter[0])
@@ -146,7 +147,7 @@ let g:easy_align_ignore_groups = ['Comment']
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-S-d>'
+"let g:multi_cursor_prev_key='<C-S-d>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<esc>'
 
@@ -154,16 +155,16 @@ let g:multi_cursor_quit_key='<esc>'
 " [> JsBeautify <]
 
 " format selection
-autocmd FileType javascript vnoremap <buffer>  <C-S-F> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer>  <C-S-F> :call RangeJsonBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <C-S-F> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <C-S-F> :call RangeCSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <C-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer>  <C-f> :call RangeJsonBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <C-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <C-f> :call RangeCSSBeautify()<cr>
 
 " format the whole file
-autocmd FileType javascript nnoremap <buffer>  <C-S-F> :call JsBeautify()<cr>
-autocmd FileType json nnoremap <buffer>  <C-S-F> :call JsonBeautify()<cr>
-autocmd FileType html nnoremap <buffer> <C-S-F> :call HtmlBeautify()<cr>
-autocmd FileType css nnoremap <buffer> <C-S-F> :call CSSBeautify()<cr>
+"autocmd FileType javascript nnoremap <buffer>  <C-S-F> :call JsBeautify()<cr>
+"autocmd FileType json nnoremap <buffer>  <C-S-F> :call JsonBeautify()<cr>
+"autocmd FileType html nnoremap <buffer> <C-S-F> :call HtmlBeautify()<cr>
+"autocmd FileType css nnoremap <buffer> <C-S-F> :call CSSBeautify()<cr>
 
 " [> YankStack <]
 
@@ -212,6 +213,6 @@ let g:ycm_key_list_previous_completion = ['<S-TAB>']
 " [> DBEXT <]
 let g:dbext_default_profile_rbertrand_beta = 'type=PGSQL:user=beta_usr:passwd=beta:dbname=beta_db'
 
-" [> image.vim <]
-au BufRead *.png,*.jpg,*.jpeg,*.PNG :call DisplayImage()
-
+" [> Tern <]
+nnoremap <c-c>g :TernDef<Cr>
+nnoremap <c-c>rr :TernRename<Cr>

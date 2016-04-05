@@ -27,7 +27,6 @@ Plug 'moll/vim-node'
 Plug 'syngan/vim-vimlint'
 Plug 'ynkdir/vim-vimlparser'
 Plug 'wesQ3/vim-windowswap'
-"Plug 'davidhalter/jedi-vim'
 Plug 'klen/python-mode'
 Plug 'Townk/vim-autoclose'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -42,6 +41,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
+Plug 'skammer/vim-css-color'
+Plug 'moll/vim-bbye'
 
 call plug#end()
 
