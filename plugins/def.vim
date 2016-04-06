@@ -41,12 +41,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
-Plug 'skammer/vim-css-color'
 Plug 'moll/vim-bbye'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
+Plug 'xolox/vim-session'
+Plug 'tpope/vim-abolish'
+Plug 'valloric/MatchTagAlways'
 
 call plug#end()
 

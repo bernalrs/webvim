@@ -219,3 +219,9 @@ let g:dbext_default_profile_rbertrand_beta = 'type=PGSQL:user=beta_usr:passwd=be
 " [> Tern <]
 nnoremap <c-c>g :TernDef<Cr>
 nnoremap <c-c>rr :TernRename<Cr>
+
+" [> TagBar <]
+nnoremap <c-m> :TagbarToggle<Cr>
+
+" [> Sessions <]
+:let g:session_autosave = 'no'
