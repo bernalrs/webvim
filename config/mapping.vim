@@ -47,6 +47,13 @@ onoremap in{ :<c-u>normal! f{vi{<cr>
 " select inside brackets
 onoremap in[ :<c-u>normal! f[vi[<cr>
 
+
+" pane navigation
+nmap <silent> <a-k> :wincmd k<CR>
+nmap <silent> <a-j> :wincmd j<CR>
+nmap <silent> <a-h> :wincmd h<CR>
+nmap <silent> <a-l> :wincmd l<CR>
+
 " Open MYVIMRC in a vsplit
 nnoremap <leader>ev :split $MYVIMRC<cr>
 
