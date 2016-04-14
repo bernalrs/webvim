@@ -49,6 +49,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-session'
 Plug 'tpope/vim-abolish'
 Plug 'valloric/MatchTagAlways'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
